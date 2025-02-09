@@ -1,0 +1,34 @@
+{
+  "name": "basics",
+  "version": "1.0.0",
+  "description": "learning node js basics",
+  "author": "Mohamed Mamdouh",
+  "license": "ISC",
+  "main": "main.js",
+  "scripts": {
+    "remote-database": "nodemon database/remote/server.js",
+    "local-mongoose-database": "nodemon database/local/mongoose_script.js",
+    "local-mysql-database": "nodemon database/local/mysql_script.js",
+    "event-loop": "nodemon events/event-loop.js",
+    "events": "nodemon events/events.js",
+    "express": "nodemon server/server.js",
+    "client-socket": "nodemon socket/client_side.js",
+    "server-socket": "nodemon socket/server_side.js",
+    "streams": "nodemon streams/streams.js",
+    "callbacks": "nodemon promises/callback.js",
+    "promises": "nodemon promises/promise.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "hbs": "^4.2.0",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.3.1",
+    "mysql": "^2.18.1",
+    "request": "^2.88.2",
+    "superagent": "^9.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

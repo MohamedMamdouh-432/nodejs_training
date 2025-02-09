@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+    {{# if condition}}
+      <h4>Welcome to Our Page 👍 [{{title}}]</h4>
+    {{else}}
+      <h4>Wrong Page 👎 [{{title}}]</h4>
+    {{/if}}
+    <ul>
+      {{#each array as | item|}}
+        <li>{{item}}</li>
+      {{/each}}
+    </ul>
+    
+  </body>
+</html>
