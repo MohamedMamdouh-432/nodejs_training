@@ -5,8 +5,12 @@ router.get('/', function (req, res, next) {
     res.render('index', {
         title: 'Express',
         condition: true,
-        array: [1, 2, 3, 4],
+        arr: ["Hi", "Bye", "Good", "Bad"],
     })
+})
+
+router.get('/person', (req, res, next) => {
+    res.render('person')
 })
 
 module.exports = router
