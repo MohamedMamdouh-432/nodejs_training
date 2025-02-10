@@ -1,2 +1,11 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+{{# if condition}}
+    <h4>Welcome to Our Page 👍 [{{title}}]</h4>
+{{else}}
+    <h4>Wrong Page 👎 [{{title}}]</h4>
+{{/if}}
+
+<form action="/users/info" method="post">
+    <input type="text" name="id" placeholder="Enter Id" />
+    <button type="submit">Submit</button>
+</form>
