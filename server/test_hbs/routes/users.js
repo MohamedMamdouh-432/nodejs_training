@@ -1,7 +1,7 @@
-var express = require('express')
-var router = express.Router()
+const { check, validationResult } = require('express-validator')
+const express = require('express')
+const router = express.Router()
 
-/* GET users listing. */
 router.get('/', (req, res, next) => {
     res.send('respond with a resource')
 })
@@ -12,13 +12,18 @@ router.get('/info/:id?', (req, res, next) => {
     })
 })
 
-router.post('/info', (req, res, next) => {
-    req.check('id', 'InValidId').not().isEmpty()
-    const errors = req.validateErrors()
-    if (errors) {
-        console.log(errors)
-        res.redirect('/')
-    } else res.redirect('info/' + req.body.id)
-})
+router.post(
+  '/info', [
+    check('id').notEmpty().withMessage('Id is not valid')
+  ], (req, res, next) => {
+    const result = validationResult(req)
+    if (!result.isEmpty()) {
+        result.errors.forEach(err => console.log(err.field, ": ", err.msg))
+      return res.redirect('/')
+    }
+    res.redirect('info/' + req.body.id)
+  }
+)
 
 module.exports = router
+

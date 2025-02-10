@@ -1,11 +1,11 @@
 var express = require('express')
 var router = express.Router()
 
-router.get('/', function (req, res, next) {
+router.get('/', (req, res, next) => {
     res.render('index', {
+        author: 'Mohamed Mamdouh',
         title: 'Express',
         condition: true,
-        arr: ["Hi", "Bye", "Good", "Bad"],
     })
 })
 
