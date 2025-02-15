@@ -3,9 +3,9 @@ var router = express.Router()
 
 router.get('/', (req, res, next) => {
     res.render('index', {
-        author: 'Mohamed Mamdouh',
         title: 'Express',
-        condition: true,
+        success: req.session.success,
+        errors: req.session.errors,
     })
 })
 
