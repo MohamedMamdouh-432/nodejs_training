@@ -1,18 +1,22 @@
-<h1>{{title}}</h1>
-<h4>Welcome to Our Page 👍 Author: Mohamed Mamdouh </h4>
-<form action="/users/info" method="post">
-    <input type="text" name="name" placeholder="Enter Name" /> <br><br>
-    <input type="text" name="phone" placeholder="Enter Phone" /> <br><br>
-    <button type="submit">Submit</button>
-</form>
+<div class="container">
+    <h1>{{title}}</h1>
+    <h4>Welcome to Our Page 👍 Author: Mohamed Mamdouh </h4>
+    <form action="/users/info" method="post">
+        <input type="text" name="name" placeholder="Enter Name" /> <br><br>
+        <input type="text" name="phone" placeholder="Enter Phone" /> <br><br>
+        <button type="submit">Submit</button>
+    </form>
 
-{{#if success}}
-    <h3>Request is Successful</h3>
-{{else}}
-    <h3>Request is Failed</h3>
-    <ul>
-        {{#each errors}}
-            <li>{{this.msg}}</li>
-        {{/each}}
-    </ul>
-{{/if}}
+    {{#if success}}
+        <h3>Request is Successful</h3>
+    {{else}}
+        {{#if errors}}
+            <h3>Request is Failed</h3>
+        {{/if}}
+        <ul>
+            {{#each errors}}
+                <li class="alert alert-danger" role="alert">{{this.msg}}</li>
+            {{/each}}
+        </ul>
+    {{/if}}
+</div>
