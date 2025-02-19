@@ -1,3 +1,4 @@
 node_modules
 server/test_jade/node_modules
 server/test_hbs/node_modules
+server/test_hbs/public/bower_components
