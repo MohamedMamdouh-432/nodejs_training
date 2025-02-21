@@ -2,3 +2,5 @@ node_modules
 server/test_jade/node_modules
 server/test_hbs/node_modules
 server/test_hbs/public/bower_components
+database/test_mongodb/node_modules
+database/test_mongodb/public/bower_components

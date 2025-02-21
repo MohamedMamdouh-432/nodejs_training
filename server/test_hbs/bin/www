@@ -1,16 +1,16 @@
-var app = require('../app')
-var debug = require('debug')('test-hbs:server')
-var http = require('http')
+const app = require('../app')
+const debug = require('debug')('test-hbs:server')
+const http = require('http')
 
-var port = process.env.PORT || 3000
+const port = process.env.PORT || 3000
 app.set('port', port)
-var server = http.createServer(app)
+const server = http.createServer(app)
 server.listen(port)
 server.on('error', (error) => {
     if (error.syscall !== 'listen') {
         throw error
     }
-    var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port
+    const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port
     switch (error.code) {
         case 'EACCES':
             console.error(bind + ' requires elevated privileges')
@@ -23,7 +23,7 @@ server.on('error', (error) => {
     }
 })
 server.on('listening', () => {
-    var addr = server.address()
-    var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port
+    const addr = server.address()
+    const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port
     debug('Listening on ' + bind)
 })

@@ -85,6 +85,6 @@ Factory.create({
 
 const password = 'Red12345!'
 bcryptjs.hash(password, 8).then((hashedPassword) => {
-  console.log(hashedPassword)
+    console.log(hashedPassword)
     console.log(bcryptjs.compareSync(password, hashedPassword))
 })
